@@ -7,10 +7,10 @@
 namespace SpriterEngine
 {
 
-	class SfmlPointInstanceInfo : public PointInstanceInfo
+	class SDL2PointInstanceInfo : public PointInstanceInfo
 	{
 	public:
-		SfmlPointInstanceInfo(SDL_Renderer *validRenderWindow);
+		SDL2PointInstanceInfo(SDL_Renderer *validRenderWindow);
 
 		void render() override;
 

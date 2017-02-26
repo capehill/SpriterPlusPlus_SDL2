@@ -7,10 +7,10 @@
 namespace SpriterEngine
 {
 
-	class SfmlBoneInstanceInfo : public BoneInstanceInfo
+	class SDL2BoneInstanceInfo : public BoneInstanceInfo
 	{
 	public:
-		SfmlBoneInstanceInfo(point initialSize, SDL_Renderer *validRenderWindow);
+		SDL2BoneInstanceInfo(point initialSize, SDL_Renderer *validRenderWindow);
 
 		void render() override;
 

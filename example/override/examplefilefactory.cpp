@@ -13,9 +13,9 @@
 
 #include "jsonspriterfiledocumentwrapper.h"
 
-#include "sfmlimagefile.h"
-#include "sfmlatlasfile.h"
-#include "sfmlsoundfile.h"
+#include "sdl2imagefile.h"
+#include "sdl2atlasfile.h"
+#include "sdl2soundfile.h"
 
 namespace SpriterEngine
 {
@@ -26,18 +26,18 @@ namespace SpriterEngine
 
 	ImageFile * ExampleFileFactory::newImageFile(const std::string &initialFilePath, point initialDefaultPivot, atlasdata atlasData)
 	{
-		return new SfmlImageFile(initialFilePath, initialDefaultPivot, renderWindow);
+		return new SDL2ImageFile(initialFilePath, initialDefaultPivot, renderWindow);
 	}
 
 	AtlasFile *ExampleFileFactory::newAtlasFile(const std::string &initialFilePath)
 	{
-		return new SfmlAtlasFile(renderWindow, initialFilePath);
+		return new SDL2AtlasFile(renderWindow, initialFilePath);
 
 	}
 
 	SoundFile * ExampleFileFactory::newSoundFile(const std::string & initialFilePath)
 	{
-//		return new SfmlSoundFile(initialFilePath);
+//		return new SDL2SoundFile(initialFilePath);
 		return nullptr;
 	}
 

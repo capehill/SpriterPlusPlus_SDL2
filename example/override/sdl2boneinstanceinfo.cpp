@@ -1,11 +1,11 @@
-#include "sfmlboneinstanceinfo.h"
+#include "sdl2boneinstanceinfo.h"
 
 #include "../../spriterengine/global/settings.h"
 
 namespace SpriterEngine
 {
 
-	SfmlBoneInstanceInfo::SfmlBoneInstanceInfo(point initialSize, SDL_Renderer *validRenderWindow) :
+	SDL2BoneInstanceInfo::SDL2BoneInstanceInfo(point initialSize, SDL_Renderer *validRenderWindow) :
 		BoneInstanceInfo(initialSize),
 		renderWindow(validRenderWindow)
 	{
@@ -24,7 +24,7 @@ namespace SpriterEngine
 //		boneShape.setOutlineThickness(1);
 	}
 
-	void SfmlBoneInstanceInfo::render()
+	void SDL2BoneInstanceInfo::render()
 	{
 		if (Settings::renderDebugBones)
 		{

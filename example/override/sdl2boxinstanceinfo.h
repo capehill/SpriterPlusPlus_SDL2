@@ -8,10 +8,10 @@
 namespace SpriterEngine
 {
 
-	class SfmlBoxInstanceInfo : public BoxInstanceInfo
+	class SDL2BoxInstanceInfo : public BoxInstanceInfo
 	{
 	public:
-		SfmlBoxInstanceInfo(point initialSize, SDL_Renderer *validRenderWindow);
+		SDL2BoxInstanceInfo(point initialSize, SDL_Renderer *validRenderWindow);
 
 		void render() override;
 

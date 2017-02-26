@@ -6,10 +6,10 @@
 
 namespace SpriterEngine
 {
-	class SfmlImageFile : public ImageFile
+	class SDL2ImageFile : public ImageFile
 	{
 	public:
-		SfmlImageFile(std::string initialFilePath, point initialDefaultPivot, SDL_Renderer *validRenderWindow);
+		SDL2ImageFile(std::string initialFilePath, point initialDefaultPivot, SDL_Renderer *validRenderWindow);
 
 		void renderSprite(UniversalObjectInterface *spriteInfo) override;
 

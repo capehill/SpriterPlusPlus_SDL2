@@ -1,9 +1,9 @@
 #include "exampleobjectfactory.h"
 
-#include "sfmlpointinstanceinfo.h"
-#include "sfmlboxinstanceinfo.h"
-#include "sfmlboneinstanceinfo.h"
-#include "sfmlsoundobjectinforeference.h"
+#include "sdl2pointinstanceinfo.h"
+#include "sdl2boxinstanceinfo.h"
+#include "sdl2boneinstanceinfo.h"
+#include "sdl2soundobjectinforeference.h"
 
 namespace SpriterEngine
 {
@@ -15,17 +15,17 @@ namespace SpriterEngine
 
 	PointInstanceInfo * ExampleObjectFactory::newPointInstanceInfo()
 	{
-		return new SfmlPointInstanceInfo(renderWindow);
+		return new SDL2PointInstanceInfo(renderWindow);
 	}
 
 	BoxInstanceInfo * ExampleObjectFactory::newBoxInstanceInfo(point size)
 	{
-		return new SfmlBoxInstanceInfo(size, renderWindow);
+		return new SDL2BoxInstanceInfo(size, renderWindow);
 	}
 
 	BoneInstanceInfo * ExampleObjectFactory::newBoneInstanceInfo(point size)
 	{
-		return new SfmlBoneInstanceInfo(size, renderWindow);
+		return new SDL2BoneInstanceInfo(size, renderWindow);
 	}
 
 }

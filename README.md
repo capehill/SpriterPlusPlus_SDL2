@@ -9,3 +9,4 @@ Please see main source for latest code at: https://github.com/lucidspriter/Sprit
 - [ ] Display FPS
 - [ ] Use time elapsed to adjust the animation speed
 - [ ] Support sounds
+- [ ] Support debug drawing

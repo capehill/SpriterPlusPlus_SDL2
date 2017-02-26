@@ -1,11 +1,11 @@
-#include "sfmlpointinstanceinfo.h"
+#include "sdl2pointinstanceinfo.h"
 
 #include "../../spriterengine/global/settings.h"
 
 namespace SpriterEngine
 {
 
-	SfmlPointInstanceInfo::SfmlPointInstanceInfo(SDL_Renderer *validRenderWindow) :
+	SDL2PointInstanceInfo::SDL2PointInstanceInfo(SDL_Renderer *validRenderWindow) :
 		renderWindow(validRenderWindow)
 //		circle(10)
 	{
@@ -13,7 +13,7 @@ namespace SpriterEngine
 //		circle.setOrigin(5, 5);
 	}
 
-	void SfmlPointInstanceInfo::render()
+	void SDL2PointInstanceInfo::render()
 	{
 		if (Settings::renderDebugPoints)
 		{

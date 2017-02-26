@@ -7,10 +7,10 @@
 
 namespace SpriterEngine
 {
-	class SfmlAtlasFile : public AtlasFile
+	class SDL2AtlasFile : public AtlasFile
 	{
 	public:
-		SfmlAtlasFile(SDL_Renderer *renderer, std::string initialFilePath);
+		SDL2AtlasFile(SDL_Renderer *renderer, std::string initialFilePath);
 
 		const SDL_Texture *getTexture() const;
 

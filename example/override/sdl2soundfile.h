@@ -6,10 +6,10 @@
 namespace SpriterEngine
 {
 
-	class SfmlSoundFile : public SoundFile
+	class SDL2SoundFile : public SoundFile
 	{
 	public:
-		SfmlSoundFile(std::string initialFilePath);
+		SDL2SoundFile(std::string initialFilePath);
 
 		SoundObjectInfoReference * newSoundInfoReference();
 

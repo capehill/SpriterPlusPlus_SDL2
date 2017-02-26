@@ -1,26 +1,26 @@
-#include "sfmlimagefile.h"
+#include "sdl2imagefile.h"
 
 #include "../../spriterengine/global/settings.h"
 
 #include "../../spriterengine/objectinfo/universalobjectinterface.h"
 
-#include "sfmlatlasfile.h"
+#include "sdl2atlasfile.h"
 
 namespace SpriterEngine {
 
-    SfmlImageFile::SfmlImageFile(std::string initialFilePath, point initialDefaultPivot,
+    SDL2ImageFile::SDL2ImageFile(std::string initialFilePath, point initialDefaultPivot,
                                  SDL_Renderer *validRenderWindow) :
             ImageFile(initialFilePath, initialDefaultPivot),
             renderWindow(validRenderWindow) {
         initializeFile();
     }
 
-    void SfmlImageFile::initializeFile() {
+    void SDL2ImageFile::initializeFile() {
         texture = IMG_LoadTexture(renderWindow, path().c_str());
 
         if (texture == nullptr) {
             Settings::Settings::error(
-                    "SfmlImageFile::initializeFile - sfml texture unable to load file from path \"" + path() + "\"");
+                    "SDL2ImageFile::initializeFile - sfml texture unable to load file from path \"" + path() + "\"");
             return;
         }
 
@@ -29,7 +29,7 @@ namespace SpriterEngine {
         frame_rect = {0, 0, texture_width, texture_height};
     }
 
-    void SfmlImageFile::renderSprite(UniversalObjectInterface *spriteInfo) {
+    void SDL2ImageFile::renderSprite(UniversalObjectInterface *spriteInfo) {
         if (atlasFile) {
             // Adding of transformations is in the reverse order you would expect.
             if (atlasFrameData.rotated) {
@@ -130,12 +130,12 @@ namespace SpriterEngine {
     }
 
     // Overwritten so we can create the sprite from the texture.
-    void SfmlImageFile::setAtlasFile(AtlasFile *initialAtlasFile, atlasframedata initialAtlasFrameData) {
+    void SDL2ImageFile::setAtlasFile(AtlasFile *initialAtlasFile, atlasframedata initialAtlasFrameData) {
         ImageFile::setAtlasFile(initialAtlasFile, initialAtlasFrameData);
 
-        // atlasFile should be a SfmlAtlasFile
-        if (atlasFile && static_cast<SfmlAtlasFile *>(atlasFile)->loaded()) {
-            const SDL_Texture *atlasTexture = static_cast<SfmlAtlasFile *>(atlasFile)->getTexture();
+        // atlasFile should be a SDL2AtlasFile
+        if (atlasFile && static_cast<SDL2AtlasFile *>(atlasFile)->loaded()) {
+            const SDL_Texture *atlasTexture = static_cast<SDL2AtlasFile *>(atlasFile)->getTexture();
             texture = (SDL_Texture *) atlasTexture;
             if (atlasFrameData.rotated) {
                 // When rotated, the atlasdata framesize are relative to the original. Not the frame

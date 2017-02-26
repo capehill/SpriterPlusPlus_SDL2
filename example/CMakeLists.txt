@@ -55,35 +55,35 @@ set(SPRITER_JSON_IMPL_HDRS
     override/jsonspriterfiledocumentwrapper.h
     override/jsonspriterfileelementwrapper.h)
 
-set(SPRITER_SFML_IMPL_SRCS
-    override/sfmlboneinstanceinfo.cpp
-    override/sfmlimagefile.cpp
-    override/sfmlatlasfile.cpp
-    override/sfmlsoundfile.cpp
-    override/sfmlboxinstanceinfo.cpp
-    override/sfmlpointinstanceinfo.cpp
-    override/sfmlsoundobjectinforeference.cpp)
-set(SPRITER_SFML_IMPL_HDRS
-    override/sfmlboneinstanceinfo.h
-    override/sfmlimagefile.h
-    override/sfmlatlasfile.h
-    override/sfmlsoundfile.h
-    override/sfmlboxinstanceinfo.h
-    override/sfmlpointinstanceinfo.h
-    override/sfmlsoundobjectinforeference.h)
+set(SPRITER_SDL2_IMPL_SRCS
+        override/sdl2boneinstanceinfo.cpp
+        override/sdl2imagefile.cpp
+        override/sdl2atlasfile.cpp
+        override/sdl2soundfile.cpp
+        override/sdl2boxinstanceinfo.cpp
+        override/sdl2pointinstanceinfo.cpp
+        override/sdl2soundobjectinforeference.cpp)
+set(SPRITER_SDL2_IMPL_HDRS
+        override/sdl2boneinstanceinfo.h
+        override/sdl2imagefile.h
+        override/sdl2atlasfile.h
+        override/sdl2soundfile.h
+        override/sdl2boxinstanceinfo.h
+        override/sdl2pointinstanceinfo.h
+        override/sdl2soundobjectinforeference.h)
 
 set(SPRITER_EXAMPLE_SRCS
     ${SPRITER_EXAMPLE_SRCS}
     ${SPRITER_PUGIXML_IMPL_SRCS}
     ${SPRITER_TINYXML2_IMPL_SRCS}
     ${SPRITER_JSON_IMPL_SRCS}
-    ${SPRITER_SFML_IMPL_SRCS})
+    ${SPRITER_SDL2_IMPL_SRCS})
 set(SPRITER_EXAMPLE_HDRS
     ${SPRITER_EXAMPLE_HDRS}
     ${SPRITER_PUGIXML_IMPL_HDRS}
     ${SPRITER_TINYXML2_IMPL_HDRS}
     ${SPRITER_JSON_IMPL_HDRS}
-    ${SPRITER_SFML_IMPL_HDRS})
+    ${SPRITER_SDL2_IMPL_HDRS})
 
 add_executable(SpriterPlusPlus ${SPRITER_EXAMPLE_SRCS})
 

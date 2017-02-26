@@ -1,18 +1,18 @@
-#include "sfmlboxinstanceinfo.h"
+#include "sdl2boxinstanceinfo.h"
 
 #include "../../spriterengine/global/settings.h"
 
 namespace SpriterEngine
 {
 
-	SfmlBoxInstanceInfo::SfmlBoxInstanceInfo(point initialSize, SDL_Renderer *validRenderWindow) :
+	SDL2BoxInstanceInfo::SDL2BoxInstanceInfo(point initialSize, SDL_Renderer *validRenderWindow) :
 		BoxInstanceInfo(initialSize),
 		renderWindow(validRenderWindow),
 		rectangle({0,0,int(initialSize.x), int(initialSize.y)})
 	{
 	}
 
-	void SfmlBoxInstanceInfo::render()
+	void SDL2BoxInstanceInfo::render()
 	{
 		if (Settings::renderDebugBoxes)
 		{

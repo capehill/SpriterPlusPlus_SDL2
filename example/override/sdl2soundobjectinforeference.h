@@ -6,10 +6,10 @@
 namespace SpriterEngine
 {
 	
-	class SfmlSoundObjectInfoReference : public SoundObjectInfoReference
+	class SDL2SoundObjectInfoReference : public SoundObjectInfoReference
 	{
 	public:
-//		SfmlSoundObjectInfoReference(sf::SoundBuffer &buffer);
+//		SDL2SoundObjectInfoReference(sf::SoundBuffer &buffer);
 
 		void playTrigger() override;
 
