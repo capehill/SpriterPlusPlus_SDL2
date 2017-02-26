@@ -1,11 +1,8 @@
 #ifndef SFMLPOINTINSTANCEINFO_H
 #define SFMLPOINTINSTANCEINFO_H
 
-#include "SFML/Graphics/RenderWindow.hpp"
-
-#include "SFML/Graphics/CircleShape.hpp"
-
 #include "../../spriterengine/objectinfo/pointinstanceinfo.h"
+#include <SDL_render.h>
 
 namespace SpriterEngine
 {
@@ -13,14 +10,14 @@ namespace SpriterEngine
 	class SfmlPointInstanceInfo : public PointInstanceInfo
 	{
 	public:
-		SfmlPointInstanceInfo(sf::RenderWindow *validRenderWindow);
+		SfmlPointInstanceInfo(SDL_Renderer *validRenderWindow);
 
 		void render() override;
 
 	private:
-		sf::RenderWindow *renderWindow;
+		SDL_Renderer *renderWindow;
 
-		sf::CircleShape circle;
+//		sf::CircleShape circle;
 	};
 
 }

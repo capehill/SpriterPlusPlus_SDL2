@@ -1,3 +1,4 @@
+#include <SDL_system.h>
 #include "examplefilefactory.h"
 
 #include "../../spriterengine/override/imagefile.h"
@@ -18,8 +19,7 @@
 
 namespace SpriterEngine
 {
-
-	ExampleFileFactory::ExampleFileFactory(sf::RenderWindow *validRenderWindow) :
+	ExampleFileFactory::ExampleFileFactory(SDL_Renderer *validRenderWindow) :
 		renderWindow(validRenderWindow)
 	{
 	}
@@ -31,13 +31,14 @@ namespace SpriterEngine
 
 	AtlasFile *ExampleFileFactory::newAtlasFile(const std::string &initialFilePath)
 	{
-		return new SfmlAtlasFile(initialFilePath);
+		return new SfmlAtlasFile(renderWindow, initialFilePath);
 
 	}
 
 	SoundFile * ExampleFileFactory::newSoundFile(const std::string & initialFilePath)
 	{
-		return new SfmlSoundFile(initialFilePath);
+//		return new SfmlSoundFile(initialFilePath);
+		return nullptr;
 	}
 
 	SpriterFileDocumentWrapper * ExampleFileFactory::newScmlDocumentWrapper()

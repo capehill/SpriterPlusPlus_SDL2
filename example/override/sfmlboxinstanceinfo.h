@@ -1,11 +1,9 @@
 #ifndef SFMLBOXINSTANCEINFO_H
 #define SFMLBOXINSTANCEINFO_H
 
-#include "SFML/Graphics/RenderWindow.hpp"
-
-#include "SFML/Graphics/RectangleShape.hpp"
 
 #include "../../spriterengine/objectinfo/boxinstanceinfo.h"
+#include <SDL_render.h>
 
 namespace SpriterEngine
 {
@@ -13,14 +11,14 @@ namespace SpriterEngine
 	class SfmlBoxInstanceInfo : public BoxInstanceInfo
 	{
 	public:
-		SfmlBoxInstanceInfo(point initialSize, sf::RenderWindow *validRenderWindow);
+		SfmlBoxInstanceInfo(point initialSize, SDL_Renderer *validRenderWindow);
 
 		void render() override;
 
 	private:
-		sf::RenderWindow *renderWindow;
+		SDL_Renderer *renderWindow;
 
-		sf::RectangleShape rectangle;
+		SDL_Rect rectangle;
 	};
 
 }

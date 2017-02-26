@@ -8,8 +8,8 @@
 namespace SpriterEngine
 {
 
-	ExampleObjectFactory::ExampleObjectFactory(sf::RenderWindow *validRenderWindow) :
-		renderWindow(validRenderWindow)
+	ExampleObjectFactory::ExampleObjectFactory(SDL_Renderer *validRenderer) :
+		renderWindow(validRenderer)
 	{
 	}
 

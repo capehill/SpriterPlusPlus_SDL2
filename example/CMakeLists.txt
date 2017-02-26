@@ -1,18 +1,23 @@
 project(SPRITER_EXAMPLE CXX)
 
-set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${SPRITER_PLUS_PLUS_SOURCE_DIR}/SFML-2.3.2/cmake/Modules")
-if(${CMAKE_SYSTEM_NAME} MATCHES "Windows")
-    set(SFML_ROOT "${SPRITER_PLUS_PLUS_SOURCE_DIR}/SFML-2.3.2")
-endif()
-
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 option(UsePugixml "Use pugixml instead of tinyxml2 for file parsing" OFF)
 if(UsePugixml)
     add_definitions(-D__USE_PUGIXML)
 endif()
 
-find_package(SFML 2 COMPONENTS graphics window system audio REQUIRED)
-include_directories(${SFML_INCLUDE_DIR})
+# Setup SDL2
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${PROJECT_SOURCE_DIR}/cmake")
+find_package(SDL2 REQUIRED)
+find_package(SDL2_image REQUIRED)
+find_package(SDL2_ttf REQUIRED)
+include_directories(
+        /usr/local/include
+        ${SDL2_INCLUDE_DIR}
+        ${SDL2_IMAGE_INCLUDE_DIR}
+        ${SDL2_TTF_INCLUDE_DIR}
+)
+
 include_directories(${JSON_SOURCE_DIR})
 
 set(SPRITER_EXAMPLE_SRCS
@@ -83,7 +88,7 @@ set(SPRITER_EXAMPLE_HDRS
 add_executable(SpriterPlusPlus ${SPRITER_EXAMPLE_SRCS})
 
 target_link_libraries (SpriterPlusPlus
-    ${SFML_LIBRARIES}
-    tinyxml2
-    pugixml
-    spriterengine)
+        ${SDL2_LIBRARY} ${SDL2_IMAGE_LIBRARIES} ${SDL2_TTF_LIBRARIES}
+        tinyxml2
+        pugixml
+        spriterengine)

@@ -3,27 +3,27 @@
 namespace SpriterEngine
 {
 
-	SfmlSoundObjectInfoReference::SfmlSoundObjectInfoReference(sf::SoundBuffer &buffer)
-	{
-		sound.setBuffer(buffer);
-	}
+//	SfmlSoundObjectInfoReference::SfmlSoundObjectInfoReference(sf::SoundBuffer &buffer)
+//	{
+//		sound.setBuffer(buffer);
+//	}
 
 	void SfmlSoundObjectInfoReference::playTrigger()
 	{
-		if (getTriggerCount())
-		{
-			sound.play();
-		}
+//		if (getTriggerCount())
+//		{
+//			sound.play();
+//		}
 	}
 
 	void SfmlSoundObjectInfoReference::setPlaybackVolume()
 	{
-		sound.setVolume(100 * getVolume());
+//		sound.setVolume(100 * getVolume());
 	}
 
 	void SfmlSoundObjectInfoReference::setPlaybackPanning()
 	{
-		sound.setPosition(100 * getPanning(), 0, 0);
+//		sound.setPosition(100 * getPanning(), 0, 0);
 	}
 
 }

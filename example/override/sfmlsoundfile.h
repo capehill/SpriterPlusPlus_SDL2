@@ -3,8 +3,6 @@
 
 #include "../../spriterengine/override/soundfile.h"
 
-#include "SFML/Audio.hpp"
-
 namespace SpriterEngine
 {
 
@@ -16,7 +14,7 @@ namespace SpriterEngine
 		SoundObjectInfoReference * newSoundInfoReference();
 
 	private:
-		sf::SoundBuffer buffer;
+//		sf::SoundBuffer buffer;
 
 		void initializeFile();
 	};

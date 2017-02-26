@@ -3,16 +3,13 @@
 
 #include "../../spriterengine/override/soundobjectinforeference.h"
 
-#include "SFML/Audio.hpp"
-
 namespace SpriterEngine
 {
 	
-
 	class SfmlSoundObjectInfoReference : public SoundObjectInfoReference
 	{
 	public:
-		SfmlSoundObjectInfoReference(sf::SoundBuffer &buffer);
+//		SfmlSoundObjectInfoReference(sf::SoundBuffer &buffer);
 
 		void playTrigger() override;
 
@@ -20,7 +17,7 @@ namespace SpriterEngine
 		void setPlaybackVolume() override;
 		void setPlaybackPanning() override;
 
-		sf::Sound sound;
+//		sf::Sound sound;
 	};
 
 }

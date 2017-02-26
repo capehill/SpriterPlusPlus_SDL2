@@ -2,22 +2,23 @@
 #define SFMLATLASFILE_H
 
 #include "../../spriterengine/override/atlasfile.h"
-
-#include <SFML/Graphics.hpp>
+#include <SDL_image.h>
+#include <string>
 
 namespace SpriterEngine
 {
 	class SfmlAtlasFile : public AtlasFile
 	{
 	public:
-		SfmlAtlasFile(std::string initialFilePath);
+		SfmlAtlasFile(SDL_Renderer *renderer, std::string initialFilePath);
 
-		const sf::Texture *getTexture() const;
+		const SDL_Texture *getTexture() const;
 
 		bool loaded() {return m_loaded;}
 
 	private:
-		sf::Texture texture;
+		SDL_Renderer *renderer;
+		SDL_Texture *texture;
 
 		void initializeFile();
 

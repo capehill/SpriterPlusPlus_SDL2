@@ -5,10 +5,10 @@
 namespace SpriterEngine
 {
 
-	SfmlBoxInstanceInfo::SfmlBoxInstanceInfo(point initialSize, sf::RenderWindow *validRenderWindow) :
+	SfmlBoxInstanceInfo::SfmlBoxInstanceInfo(point initialSize, SDL_Renderer *validRenderWindow) :
 		BoxInstanceInfo(initialSize),
 		renderWindow(validRenderWindow),
-		rectangle(sf::Vector2f(initialSize.x, initialSize.y))
+		rectangle({0,0,int(initialSize.x), int(initialSize.y)})
 	{
 	}
 
@@ -16,11 +16,11 @@ namespace SpriterEngine
 	{
 		if (Settings::renderDebugBoxes)
 		{
-			rectangle.setPosition(getPosition().x, getPosition().y);
-			rectangle.setRotation(toDegrees(getAngle()));
-			rectangle.setScale(getScale().x, getScale().y);
-			rectangle.setOrigin(getPivot().x*getSize().x, getPivot().y*getSize().y);
-			renderWindow->draw(rectangle);
+//			rectangle.setPosition(getPosition().x, getPosition().y);
+//			rectangle.setRotation(toDegrees(getAngle()));
+//			rectangle.setScale(getScale().x, getScale().y);
+//			rectangle.setOrigin(getPivot().x*getSize().x, getPivot().y*getSize().y);
+//			renderWindow->draw(rectangle);
 		}
 	}
 

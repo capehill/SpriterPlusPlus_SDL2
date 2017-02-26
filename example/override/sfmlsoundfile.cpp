@@ -14,15 +14,16 @@ namespace SpriterEngine
 
 	void SfmlSoundFile::initializeFile()
 	{
-		if (!buffer.loadFromFile(path()))
-		{
-			Settings::error("SfmlSoundFile::initializeFile - sfml sound buffer unable to load file from path \"" + path() + "\"");
-		}
+//		if (!buffer.loadFromFile(path()))
+//		{
+//			Settings::error("SfmlSoundFile::initializeFile - sfml sound buffer unable to load file from path \"" + path() + "\"");
+//		}
 	}
 
 	SoundObjectInfoReference * SfmlSoundFile::newSoundInfoReference()
 	{
-		return new SfmlSoundObjectInfoReference(buffer);
+		return nullptr;
+//		return new SfmlSoundObjectInfoReference(buffer);
 	}
 
 }
