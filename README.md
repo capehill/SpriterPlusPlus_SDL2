@@ -6,7 +6,7 @@ Please see main source for latest code at: https://github.com/lucidspriter/Sprit
 
 # TODO
 - [ ] Complete support for Atlas sprites
-- [ ] Display FPS
-- [ ] Use time elapsed to adjust the animation speed
+- [x] Display FPS
+- [x] Use time elapsed to adjust the animation speed
 - [ ] Support sounds
 - [ ] Support debug drawing
