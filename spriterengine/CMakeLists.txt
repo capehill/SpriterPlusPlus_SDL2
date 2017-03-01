@@ -1,5 +1,8 @@
 project(SPRITER_ENGINE CXX)
 
+cmake_minimum_required(VERSION 3.6)
+set(CMAKE_CXX_STANDARD 11)
+
 file(GLOB_RECURSE SPRITER_ENGINE_SRCS *.cpp)
 file(GLOB_RECURSE SPRITER_ENGINE_HDRS *.h)
 
